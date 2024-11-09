@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - postgres_data_airflow:/var/lib/postgresql/data
+
+  postgres_data:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=datadb
+    volumes:
+      - postgres_data_db:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  airflow:
+    image: apache/airflow:2.6.2
+    depends_on:
+      - postgres
+      - postgres_data
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__LOAD_EXAMPLES=false
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+
+  bigquery-emulator:
+    image: ghcr.io/goccy/bigquery-emulator
+    ports:
+      - "9050:9050"
+
+volumes:
+  postgres_data_airflow:
+  postgres_data_db:
