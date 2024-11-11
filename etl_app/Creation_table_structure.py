@@ -1,4 +1,4 @@
-import psycopg2 # type: ignore
+import pg8000
 import sqlite3
 import pandas as pd
 import os
@@ -8,12 +8,12 @@ db_path = os.getenv('DB_PATH', '/data/struture.db')
 
 schema=os.getenv('DB_SCHEMA')
 
-connPst = psycopg2.connect(
-    dbname=os.getenv('DB_NAME'),
+connPst = pg8000.connect(
+    database=os.getenv('DB_NAME'),
     user=os.getenv('DB_USER'),
     password=os.getenv('DB_PASSWORD'),
     host=os.getenv('DB_HOST'),
-    port=os.getenv('DB_PORT'),
+    port=os.getenv('DB_PORT')
 )
 
 connSQL = sqlite3.connect(db_path)
