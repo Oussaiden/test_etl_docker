@@ -1580,3 +1580,45 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'plugins'
 [2024-11-17T07:42:32.544+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/__pycache__/your_dag.py
 [2024-11-17T07:42:32.554+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/__pycache__/your_dag.py took 0.030 seconds
+[2024-11-17T07:42:46.706+0000] {processor.py:186} INFO - Started process (PID=344) to work on /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:42:46.707+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/__pycache__/your_dag.py for tasks to queue
+[2024-11-17T07:42:46.709+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:42:46.709+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:42:46.753+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:42:46.747+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/__pycache__/your_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/__pycache__/your_dag.py", line 3, in <module>
+    from plugins.sql_queries import QUERIES  # Importation des requêtes
+ModuleNotFoundError: No module named 'plugins'
+[2024-11-17T07:42:46.756+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:42:46.776+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/__pycache__/your_dag.py took 0.076 seconds
+[2024-11-17T07:43:16.910+0000] {processor.py:186} INFO - Started process (PID=349) to work on /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:16.911+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/__pycache__/your_dag.py for tasks to queue
+[2024-11-17T07:43:16.912+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:43:16.912+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:16.922+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:43:16.920+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/__pycache__/your_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/__pycache__/your_dag.py", line 3, in <module>
+    from plugins.sql_queries import QUERIES  # Importation des requêtes
+ModuleNotFoundError: No module named 'plugins'
+[2024-11-17T07:43:16.923+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:16.938+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/__pycache__/your_dag.py took 0.032 seconds
+[2024-11-17T07:43:46.975+0000] {processor.py:186} INFO - Started process (PID=354) to work on /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:46.975+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/__pycache__/your_dag.py for tasks to queue
+[2024-11-17T07:43:46.977+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:43:46.976+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:46.989+0000] {logging_mixin.py:190} INFO - [2024-11-17T07:43:46.986+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/__pycache__/your_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/opt/airflow/dags/__pycache__/your_dag.py", line 3, in <module>
+    from plugins.sql_queries import QUERIES  # Importation des requêtes
+ModuleNotFoundError: No module named 'plugins'
+[2024-11-17T07:43:46.990+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/__pycache__/your_dag.py
+[2024-11-17T07:43:47.006+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/__pycache__/your_dag.py took 0.036 seconds
