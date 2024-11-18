@@ -1,3 +1,6 @@
-logs*
+logs/*
 airflow_env
 dags/__pycache__/*
+logs/dag_processor_manager/*
+logs/scheduler/*
+

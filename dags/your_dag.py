@@ -1,10 +1,13 @@
 from airflow import DAG
+from datetime import datetime
 from airflow.operators.python import PythonOperator
-from plugins.sql_queries import QUERIES  # Importation des requêtes
-from airflow_env import PostgresHook
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+
+from sql_queries import QUERIES  # Importation des requêtes
 
 # Fonction Python pour exécuter une requête SQL
 def execute_query(query_name, **kwargs):
+    
     hook = PostgresHook(postgres_conn_id='your_postgres_connection')
     sql_query = QUERIES[query_name]  # Récupération de la requête à partir du fichier
     hook.run(sql_query)  # Exécution de la requête
@@ -18,6 +21,7 @@ with DAG(
     dag_id='example_dag',
     default_args=default_args,
     schedule_interval='@daily',
+    start_date=datetime(2023, 1, 1),
     catchup=False,
 ) as dag:
 
